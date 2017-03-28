@@ -1,0 +1,194 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Phaser - Making your first game, part 2</title>
+    <script type="text/javascript" src="js/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+var w = 380, h = 780;
+var game = new Phaser.Game(w, h, Phaser.CANVAS, '', { preload: preload, create: create, update: update });
+
+//var player, keyboard;
+//var //fish, fishes, bombs, bomb, sea, star, stars, boat, platform, fish1; //fish1, fish2; 
+//var life, gameOverText, bestScoreText2, bestScoreText, tryText, btnLeft, btnRight, playbutton, splash, explode;//pausedButt,explosion;
+function preload() {
+    //game.load.image("platform","img/jj/plat.png");
+    game.load.image("bground","img/4500x6001.png");
+    //game.load.image("bomb","img/jj/bomb1.png");
+    //////////////////game.load.image("fish","img/jj/fish.png");
+    ////////////////game.load.image("star","img/jj/star1.png");
+    //////////////game.load.image("btnLeft","img/jj/transparent.png");
+    ////////////game.load.image("btnRight","img/jj/this.png");
+    
+    //////////game.load.spritesheet("fish1","img/40.png",52,50);
+    ////////game.load.spritesheet("bird","img/bird1.png",55,49);
+    //////game.load.spritesheet("explode","img/ex.png",70,70);
+    ////game.load.spritesheet("splash","img/splash.png",64,64);
+    //game.load.spritesheet("boat","img/jj/boata12.png",78,72);
+   // game.load.spritesheet("playbutton","img/PLAYPAUSE.png",100,100);
+    //game.load.spritesheet("pausedButt","img/but1.png",71.5,201);
+
+    //game.load.spritesheet("bg-fish2","img/20.png",37,35);
+}
+
+function create() {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    game.add.sprite(0,0,"bground");
+    //player = game.add.sprite(300,450,"boat");
+    //game.world.setBounds(0,0,5250,0);
+    
+
+  //  platform = game.add.sprite(0,500,"platform");
+    //fish1 = game.add.sprite(0,540,"fish1");
+    //b//ird = game.add.sprite(0,100,"bird");
+    //platform.body.immovable = true;
+    //game.physics.arcade.enable(platform);
+    //fish2 = game.add.sprite(800,100,"fish2");
+
+    //player.animations.add('turn-right',[0,1,2,3,3,4,5,6,7,8,], 8, true);
+    //player.animations.add('turn-left',[9,10,11,12,13,14,15,16], 8,true);
+
+    //fish1.animations.add('swim',[0,1,2,3,4,5,], 6, true);
+    //bird.animations.add('fly', [0,1,2,3,4,5,6,7,8,9], 5, true);//[0,1,2,3,4][0,1,2,3,4]
+    //fish2.animations.add('swim1',[0,1,2,3,4,5,],6,true);
+
+    //keyboard = game.input.keyboard.createCursorKeys();
+    //////////////////pause_label = game.add.text(550, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
+    ////////////////pause_label.inputEnabled = true;
+    ////////////pause_label.events.onInputUp.add(function () {
+    ////////////////When the pause is pressed, we pause the game
+   //////////  game.paused = true;
+       //  });
+    //////// game.input.onDown.add(unpause, self);
+     //////function unpause(event){
+        
+    // game.paused = false;
+     ////}
+        
+    //playbuttonplaybutton = game.add.button(550, 20);// 'Pause', { font: '24px Arial', fill: '#fff' });
+    //playbutton.inputEnabled = true;
+    //playbutton.events.onInputUp.add(function () {
+        // When the paus button is pressed, we pause the game
+        //game.paused = true;
+        // });
+    //game.input.onDown.add(unpause, self);
+    //function unpause(event){
+        
+      //  game.paused = false;
+   // }//
+        
+    //btnLeft= game.add.button(390,50,"btnLeft", turnleft);
+   // btnLeft.scale.x =  -5;
+    //btnLeft.scale.y =  6;
+
+    //btnRight = game.add.button(410,50,"btnRight", turnright);
+   // btnRight.scale.x =  15;
+    //btnRight.scale.y = 44;
+
+    //playbutton = game.add.button(330,480,"playbutton",play);
+    //playbutton.scale.x = 1.5;
+    //playbutton.scale.y= 1.0;
+
+    //pausedButt = game.add.button(500,500,"pausedButt", paused);
+   // pausedButt.scale.x = 1.5;
+    //pausedButt.scale.y= 1.0;
+
+   // g//ame.physics.arcade.enable(player);
+    //game.physics.arcade.enable(fish1);
+   // game.physics.arcade.enable(bird);
+
+    //game.physics.arcade.enable(btnLeft);
+    //game.physics.arcade.enable(btnRight);
+    //game.physics.arcade.enable(star);
+    //game.physics.arcade.enable(platform);
+
+    ////////createFish(1000);
+   ////// fish = game.add.group();
+   //// fish.enableBody = true;
+   //game.physics.arcade.enable(fish);
+    //game.world.setBounds(0,0,5250,0);
+
+    //////////////////////////createBomb(1400);
+   ////////////////////// bomb = game.add.group();
+    ////////////////////////bomb.enableBody = true;
+    //game.world.setBounds(0,0,5250,0);
+   //////////////////// game.physics.arcade.enable(bomb);
+
+   ////////////////// createStar(1000);
+   ////////////// star = game.add.group();
+    ////////////////star.enableBody = true;
+    //game.world.setBounds(0,0,5250,0);
+   //game.physics.arcade.enable(platform);
+    
+   // platform.scale.x = 2;
+
+   //////////// game.physics.arcade.enable(player);
+    //////////player.body.collideWorldBounds = true;
+
+    //game.physics.arcade.enable(fish1);
+	//fish1.body.collideWorldBounds = true;
+    ////////fish1.body.immovable = true;
+    //////fish1.body.collideWorldBounds = false;
+
+    ////bird.body.immovable = true;
+   // bird.body.collideWorldBounds = true;
+
+
+	//fish1.body.gravity.x = 10;
+    //fish1.body.bounce.x = 0.2;
+	//fish1.body.bounce.y = 1;
+
+    //game.physics.arcade.enable(fish2);
+    //fish2.body.collideWorldBounds = true;
+
+    //fish2.body.gravity.x = 0;
+   
+}
+
+// var x = 0;
+function update() {
+	
+    //game.physics.arcade.overlap(fishes,platform);
+    //game.physics.arcade.overlap(bombs,platform);
+    //game.physics.arcade.overlap(sfishes,platform);
+    //game.physics.arcade.overlap(player,Cheese,collectCheeses);
+    //game.physics.arcade.overlap(player,poison,collectPoisons);
+    // game.physics.arcade.overlap(player,tom,killertom);
+
+
+
+   //if(keyboard.left.isDown){
+        // x++;
+      // player.animations.play("turn-left");
+      // player.body.velocity.x = -300;
+      //   bg.frame = 0;
+    //}//
+    //else 
+    //    if(keyboard.right.isDown){
+        // x--;
+    //     bg.frame = 1;
+   // player.animations.play("turn-right");
+   //     player.body.velocity.x = 300;
+   //}
+ //else{
+  //     player.body.velocity.x = 0;
+   //  player.animations.stop();
+   //}
+
+}
+
+
+
+</script>
+
+</body>
+</html>
